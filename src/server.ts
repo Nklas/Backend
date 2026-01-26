@@ -14,6 +14,13 @@ app.get('/', (req: Request, res: Response) => {
   res.send('Hello, TypeScript + Express!');
 });
 
+// POST route example
+app.post('/api/data', (req: Request, res: Response) => {
+  const data = req.body;
+  console.log('Received data:', data);
+  res.status(201).json({ message: 'Data received successfully', data });
+});
+
 // Start the server
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
